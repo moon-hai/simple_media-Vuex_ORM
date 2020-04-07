@@ -3,7 +3,7 @@
 ## Stacks
 ```
 Vue, Vue-cli
-State management: Vuex, [Vuex-ORM](https://vuex-orm.org/)
+State management: Vuex, (Vue-ORM)[https://vuex-orm.org/]
 ```
 
 ## Structure
