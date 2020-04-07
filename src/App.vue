@@ -1,17 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Hello</h1>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import initData from './initData'
+import Post from '@/models/post'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  computed: {
+    posts () {
+      return Post.query().whereHas('tags', query => {
+        query.where('name', 'lorem')
+      }).get()
+    }
+  },
+
+  created () {
+    Post.create({ data: initData })
   }
 }
 </script>
