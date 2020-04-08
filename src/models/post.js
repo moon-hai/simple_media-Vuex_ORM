@@ -13,6 +13,7 @@ class Post extends Model {
       user_name: this.string(),
       title: this.string(''),
       description: this.string(''),
+      createdAt: this.string(),
       author: this.belongsTo(User, 'user_name'),
       tags: this.belongsToMany(Tag, PostTag, 'tag_name', 'post_id'),
       comments: this.hasMany(Comment, 'post_id')

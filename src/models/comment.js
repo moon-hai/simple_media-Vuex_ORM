@@ -11,6 +11,7 @@ class Comment extends Model {
       user_name: this.attr(),
       post_id: this.attr(),
       content: this.string(),
+      createdAt: this.string(),
       commenter: this.belongsTo(User, 'user_name'),
       article: this.belongsTo(Post, 'post_id')
     }

@@ -1,22 +1,35 @@
 <template>
   <div id="app">
-    <h1>Hello</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-5 col-md--5 col-sm-12">
+
+        </div>
+
+        <div class="col-5 col-md--5 col-sm-12">
+          <post-items />
+        </div>
+
+        <div class="col-2 col-md--2 col-sm-12">
+          <tags-section />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import initData from './initData'
 import Post from '@/models/post'
+import PostItems from './components/PostItems'
+import TagsSection from './components/TagsSection'
 
 export default {
   name: 'App',
 
-  computed: {
-    posts () {
-      return Post.query().whereHas('tags', query => {
-        query.where('name', 'lorem')
-      }).get()
-    }
+  components: {
+    PostItems,
+    TagsSection
   },
 
   created () {
@@ -24,14 +37,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
