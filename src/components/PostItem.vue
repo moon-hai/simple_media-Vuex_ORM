@@ -2,33 +2,38 @@
   <div class="col-12">
     <div class="card">
       <div class="card__header">
-        <h3 class="headline--lg">{{ post.title }}</h3>
+        <input
+          type="text"
+          class="form-input form-input-lg"
+          :value="post.title"
+          placeholder="Post title"
+          @input="e => { updatePost(post, 'title', e.target.value) }">
       </div>
+
       <div class="card__body">
-        <p>{{ post.description }}</p>
+        <input
+          type="text"
+          class="form-input form-input-lg"
+          :value="post.description"
+          placeholder="Post Body"
+          @input="e => { updatePost(post, 'description', e.target.value) }">
       </div>
 
-       <ul class="card__body">
-          <tag-item
-            v-for="tag in tags"
-            :key="tag.name"
-            :tag="tag" />
-        </ul>
+      <tag-select
+        v-for="tag in tags"
+        :key="tag.name"
+        :tagSelected="tag.name" />
 
-      <div class="card__info">
+      <div class="card__info" v-if="post.author">
         <p><i>{{ post.author.name }}</i></p>
         <p><i>{{ post.createdAt }}</i></p>
       </div>
-
-      <comment-section
-        :postId="post.id" />
     </div>
   </div>
 </template>
 
 <script>
-import CommentSection from './CommentSection'
-import TagItem from './TagItem'
+import TagSelect from './TagSelect'
 
 export default {
   name: 'PostItem',
@@ -41,14 +46,29 @@ export default {
   },
 
   components: {
-    CommentSection,
-    TagItem
+    TagSelect
   },
 
   computed: {
     tags () {
       return this.post.tags
     }
+  },
+
+  methods: {
+    updatePost (post, target, value) {
+      if (target === 'title') {
+        post.$update({ data: { title: value } })
+      } else {
+        post.$update({ data: { description: value } })
+      }
+    }
   }
 }
 </script>
+
+<style scoped>
+  .form-input-lg {
+    font-size: 20px !important;
+  }
+</style>

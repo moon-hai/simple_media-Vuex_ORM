@@ -15,21 +15,6 @@ export default [
         content: 'This is so crazy, boy!',
         createdAt: '30 mins ago',
         commenter: { name: 'dinh.hai' }
-      },
-      {
-        content: 'This is so crazy, boy!',
-        createdAt: 'just now',
-        commenter: { name: 'tran.nghia' }
-      },
-      {
-        content: 'It is a long established fact that a reader will be distracted by the readable',
-        createdAt: '30 mins ago',
-        commenter: { name: 'moon.hai' }
-      },
-      {
-        content: 'There are many variations of passages of Lorem Ipsum available',
-        createdAt: '2 mins ago',
-        commenter: { name: 'tran.nghia' }
       }
     ]
   },
@@ -49,11 +34,6 @@ export default [
         content: 'It is a long established fact that a reader will be distracted by the readable',
         createdAt: 'just now',
         commenter: { name: 'moon.hai' }
-      },
-      {
-        content: 'There are many variations of passages of Lorem Ipsum available',
-        createdAt: '12 hours ago',
-        commenter: { name: 'dinh.hai' }
       }
     ]
   }

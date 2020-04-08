@@ -1,5 +1,11 @@
 <template>
   <div class="row">
+    <div class="u-text-center">
+      <button
+        class="btn btn--primary"
+        @click="addPost">Add</button>
+    </div>
+
     <post-item
      v-for="post in posts"
      :key="post.id"
@@ -21,6 +27,18 @@ export default {
   computed: {
     posts () {
       return Post.query().with(['author', 'tags']).get()
+    }
+  },
+
+  methods: {
+    addPost () {
+      Post.insert({
+        data: {
+          title: '',
+          description: '',
+          createdAt: 'just now'
+        }
+      })
     }
   }
 }
