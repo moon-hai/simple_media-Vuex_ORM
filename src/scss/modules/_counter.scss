@@ -1,0 +1,24 @@
+.counter {
+  @include flexbox(center, center);
+  width: 48px;
+  height: 48px;
+  background-color: $warning-color;
+  color: $light-color;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  position: fixed;
+  bottom: 48px;
+  right: 80px;
+  z-index: 10;
+  font-size: $font-size-md;
+  font-weight: $font-weight-light-bold;
+
+  @include mediaquery--sm() {
+    right: 16px;
+  }
+
+  span {
+    align-self: center;
+  }
+}

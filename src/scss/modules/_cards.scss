@@ -1,0 +1,67 @@
+.card {
+  background-color: $light-color;
+  border: 1px solid lighten($gray-color, 8%);
+  border-radius: $radius;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  &__image {
+    cursor: pointer;
+    margin-top: 16px;
+    width: 100%;
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+
+    &:first-child {
+      margin-top: 0;
+
+      img {
+        border-radius: $radius $radius 0 0;
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  &__editable {
+    text-align: center;
+    margin: 8px;
+  }
+
+  &__header,
+  &__body,
+  &__info {
+    padding: 8px 8px 0;
+  }
+
+  &__header .subtitle {
+    color: lighten($dark-color, 25%);
+    font-size: $font-size-sm;
+  }
+
+  &__body .preview {
+    font-size: $font-size-sm;
+  }
+
+  &__footer {
+    padding: 8px;
+    margin-top: 8px;
+  }
+
+  &__info {
+    @include flexbox(space-between, center);
+    margin: 8px 0;
+    font-size: 14px;
+    color: $warm-color;
+  }
+}

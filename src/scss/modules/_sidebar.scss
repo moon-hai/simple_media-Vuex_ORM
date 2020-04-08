@@ -1,0 +1,25 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &__link {
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 8px 0;
+
+      &:visited {
+        color: initial;
+      }
+
+      &.active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &__link + &__link {
+    border-top: 1px solid $warm-color;
+  }
+}

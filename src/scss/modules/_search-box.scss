@@ -1,0 +1,11 @@
+.search-box {
+  @include flexbox(flex-start, center);
+
+  @include mediaquery--md() {
+    margin-top: 8px;
+  }
+
+  &__button {
+    margin-left: 8px;
+  }
+}

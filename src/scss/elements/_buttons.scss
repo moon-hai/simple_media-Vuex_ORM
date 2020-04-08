@@ -1,0 +1,75 @@
+.btn:focus,
+.btn:active:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: $light-color;
+  border: 1px solid $gray-color;
+  border-radius: $radius;
+  color: $dark-color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: $font-weight-normal;
+  line-height: $line-height-zero;
+  outline: none;
+  padding: 10px 12px;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: all 0.3s ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: darken($gray-color, 3%);
+    color: $light-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &--primary,
+  &--warning,
+  &--danger {
+    color: $light-color;
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: darken($primary-color, 3%);
+    }
+  }
+
+  &--warning {
+    background-color: $warning-color;
+    border: 1px solid $warning-color;
+
+    &:hover {
+      background-color: darken($warning-color, 3%);
+    }
+  }
+
+  &--danger {
+    background-color: $danger-color;
+    border: 1px solid $danger-color;
+
+    &:hover {
+      background-color: darken($danger-color, 3%);
+    }
+  }
+
+  &--lg {
+    padding: 16px 56px;
+  }
+
+  + .btn {
+    margin-left: 8px;
+  }
+}

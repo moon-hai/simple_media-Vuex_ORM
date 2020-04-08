@@ -1,0 +1,24 @@
+%headline {
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.headline--xl {
+  @extend %headline;
+  color: $primary-color;
+  font-size: $font-size-xl;
+
+  @include mediaquery--md() {
+    margin-bottom: 8px;
+  }
+}
+
+.headline--lg {
+  @extend %headline;
+  font-size: $font-size-lg;
+}
+
+.headline--md {
+  @extend %headline;
+  font-size: $font-size-lg;
+}

@@ -1,0 +1,20 @@
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  background-color: $light-color;
+  color: $body-font-color;
+  font-family: $body-font-family;
+  font-feature-settings: 'palt';
+  font-size: $body-font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: $body-font-weight;
+  letter-spacing: $body-spacing;
+  line-height: $body-line-height;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  padding-top: 24px;
+}
